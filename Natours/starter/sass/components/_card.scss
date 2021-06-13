@@ -12,14 +12,15 @@
         top: 0;
         left: 0;
         width: 100%;
-        -webit-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
-        // &--front {
-        // }
+        &--front {
+            background-color: $color-white;
+        }
 
         &--back {
             transform: rotateY(180deg);
@@ -43,7 +44,7 @@
     }
 
     &:hover &__side--back {
-        transform: rotateY(0deg);
+        transform: rotateY(0);
     }
 
 
@@ -53,22 +54,24 @@
         background-size: cover;
         height: 23rem;
         background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         transform: skewY(-7deg);
 
-        & > * {
-            transform: skewY(7deg );
-        }
+        // & > * {
+        //     transform: skewY(7deg );
+        // }
         
-        @supports((clip-path) or (-webkit-clip-path)){
-            transform: skewY(0);
-            & > * {
-                transform: skewY(0);
-            }
-            -webkit-clip-path: 0 0, 100% 0, 100% 85%, 0 100%;
-            clip-path: 0 0, 100% 0, 100% 85%, 0 100%;
-        }
+        // @supports((clip-path) or (-webkit-clip-path)){
+        //     transform: skewY(0);
+        //     & > * {
+        //         transform: skewY(0);
+        //     }
+        //     -webkit-clip-path: 0 0, 100% 0, 100% 85%, 0 100%;
+        //     clip-path: 0 0, 100% 0, 100% 85%, 0 100%;
+        // }
 
         &--1 {
             background-image:
@@ -108,20 +111,20 @@
 
         &--1 {
             background-image: linear-gradient(to right bottom, 
-                rgba($color-secondary-dark, .85), 
-                rgba($color-secondary-light, .85));
+                rgba($color-secondary-light, .85), 
+                rgba($color-secondary-dark, .85));
         }
 
         &--2 {
             background-image: linear-gradient(to right bottom, 
-                rgba($color-primary-dark, .85), 
-                rgba($color-primary-light, .85));
+                rgba($color-primary-light, .85), 
+                rgba($color-primary-dark, .85));
         }
 
         &--3 {
             background-image: linear-gradient(to right bottom, 
-                rgba($color-tertiary-dark, .85), 
-                rgba($color-tertiary-light, .85));
+                rgba($color-tertiary-light, .85), 
+                rgba($color-tertiary-dark, .85));
         }
     }
 
@@ -170,6 +173,7 @@
         font-weight: 100;
     }
 
+
     //@include respond(tab-port) {
     @media only screen and (max-width: 56.25em),
            only screen and (hover: none) {
@@ -180,8 +184,8 @@
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         &__side {
-            height: 52rem;
-            position: absolute;
+            height: auto;
+            position: relative;
             box-shadow: none;
 
             &--back {
