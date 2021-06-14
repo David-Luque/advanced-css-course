@@ -58,20 +58,8 @@
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        transform: skewY(-7deg);
 
-        // & > * {
-        //     transform: skewY(7deg );
-        // }
-        
-        // @supports((clip-path) or (-webkit-clip-path)){
-        //     transform: skewY(0);
-        //     & > * {
-        //         transform: skewY(0);
-        //     }
-        //     -webkit-clip-path: 0 0, 100% 0, 100% 85%, 0 100%;
-        //     clip-path: 0 0, 100% 0, 100% 85%, 0 100%;
-        // }
+
 
         &--1 {
             background-image:
@@ -105,7 +93,7 @@
     }
 
     &__heading-span {
-        padding: 1rem, 1.5rem;
+        padding: 1rem 1.5rem;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
 
